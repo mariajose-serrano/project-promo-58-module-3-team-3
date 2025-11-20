@@ -1,10 +1,50 @@
 import "../styles/App.scss";
 
 import LogoBrand from "../images/laptop-code-solid.svg";
-
 import LogoAdalab from "../images/adalab.png";
 
+
 function App() {
+
+  const handleInputProyect = (ev) => {
+    console.log("Estas escribiendo...", ev.target.value);
+    console.dir(ev.target);
+  };
+
+  const handleInputSlogan = (ev) => {
+    console.log("Estas escribiendo...", ev.target.value);
+    console.dir(ev.target);
+  };
+
+  const handleInputRepo = (ev) => {
+    console.log("Estas escribiendo...", ev.target.value);
+    console.dir(ev.target);
+  };
+  const handleInputDemo = (ev) => {
+    console.log("Estas escribiendo...", ev.target.value);
+    console.dir(ev.target);
+  };
+
+  const handleInputTech = (ev) => {
+    console.log("Estas escribiendo...", ev.target.value);
+    console.dir(ev.target);
+  };
+
+  const handleInputDesc = (ev) => {
+    console.log("Estas escribiendo...", ev.target.value);
+    console.dir(ev.target);
+  };
+
+  const handleInputName = (ev) => {
+    console.log("Estas escribiendo...", ev.target.value);
+    console.dir(ev.target);
+  };
+
+  const handleInputJob = (ev) => {
+    console.log("Estas escribiendo...", ev.target.value);
+    console.dir(ev.target);
+  };
+
   return (
     <div className="container">
       <header className="header">
@@ -92,6 +132,7 @@ function App() {
               name="name"
               id="name"
               placeholder="Nombre del proyecto"
+              onInput={handleInputProyect}
             />
             <input
               className="addForm__input"
@@ -99,6 +140,7 @@ function App() {
               name="slogan"
               id="slogan"
               placeholder="Slogan"
+              onInput={handleInputSlogan}
             />
             <div className="addForm__2col">
               <input
@@ -107,6 +149,7 @@ function App() {
                 name="repo"
                 id="repo"
                 placeholder="Repositorio"
+                onInput={handleInputRepo}
               />
               <input
                 className="addForm__input"
@@ -114,6 +157,7 @@ function App() {
                 name="demo"
                 id="demo"
                 placeholder="Demo"
+                onInput={handleInputDemo}
               />
             </div>
             <input
@@ -122,6 +166,7 @@ function App() {
               name="technologies"
               id="technologies"
               placeholder="Tecnologías"
+              onInput={handleInputTech}
             />
             <textarea
               className="addForm__input"
@@ -129,6 +174,7 @@ function App() {
               name="desc"
               id="desc"
               placeholder="Descripción"
+              onInput={handleInputDesc}
               rows="5"
             ></textarea>
           </fieldset>
@@ -143,6 +189,7 @@ function App() {
               name="autor"
               id="autor"
               placeholder="Nombre"
+              onInput={handleInputName}
             />
             <input
               className="addForm__input"
@@ -150,6 +197,7 @@ function App() {
               name="job"
               id="job"
               placeholder="Trabajo"
+              onInput={handleInputJob}
             />
           </fieldset>
 
