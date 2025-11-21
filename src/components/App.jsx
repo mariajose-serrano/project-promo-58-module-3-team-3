@@ -3,6 +3,10 @@ import "../styles/App.scss";
 import LogoBrand from "../images/laptop-code-solid.svg";
 import LogoAdalab from "../images/adalab.png";
 
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+import Hero from "./layout/Hero";
+
 import { useState } from "react";
 
 function App() {
@@ -50,32 +54,11 @@ function App() {
 
   return (
     <div className="container">
-      <header className="header">
-        <a
-          className="header__brand"
-          href="./"
-          title="Haz click para volver a la página inicial"
-        >
-          <img
-            className="header__companyLogo"
-            src={LogoBrand}
-            alt="Logo proyectos molones"
-          />
-          <h1 className="header__title">Proyectos molones</h1>
-        </a>
-        <img className="logoSponsor" src={LogoAdalab} alt="Logo Adalab" />
-      </header>
+      <Header />
 
       <main className="main">
-        <section className="hero">
-          <h2 className="title">Proyectos molones</h2>
-          <p className="hero__text">
-            Escaparate en línea para recoger ideas a través de la tecnología
-          </p>
-          <a className="button--link" href="./">
-            Ver proyectos
-          </a>
-        </section>
+        
+      <Hero />
 
         <section className="preview">
           <div className="projectImage"></div>
@@ -224,9 +207,8 @@ function App() {
         </form>
       </main>
 
-      <footer className="footer">
-        <img className="logoSponsor" src={LogoAdalab} alt="Logo Adalab" />
-      </footer>
+      <Footer />
+
     </div>
   );
 }
