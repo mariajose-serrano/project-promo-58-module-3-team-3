@@ -9,66 +9,42 @@ function App() {
 
   const [proyect, setProyect] = useState('Elegant Workspace');
   const [slogan, setSlogan] = useState('Diseños Exclusivos');
-  const [repo, setRepo] = useState('');  // ¿Esto sería un link en el icóno?
-  const [demo, setDemo] = useState('');  // ¿Lo mismo en el icóno del globo?
+  const [repo, setRepo] = useState('');  // para estos hay que poner {repo}
+  const [demo, setDemo] = useState('');  //  y {demo} tanto en el href como dentro del <a>
   const [tech, setTech] = useState('React JS - HTML - CSS');
   const [desc, setDesc] = useState('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione');
   const [name, setName] = useState('Emmelie Bjôrklund');
   const [job, setJob] = useState('Full stack Developer');
 
   const handleInputProyect = (ev) => {
-    console.log("Estas escribiendo...", ev.target.value);
-    console.dir(ev.target);
-
     setProyect(ev.target.value);
   };
 
   const handleInputSlogan = (ev) => {
-    console.log("Estas escribiendo...", ev.target.value);
-    console.dir(ev.target);
-
     setSlogan(ev.target.value);
   };
 
   const handleInputRepo = (ev) => {
-    console.log("Estas escribiendo...", ev.target.value);
-    console.dir(ev.target);
-
     setRepo(ev.target.value);
   };
 
   const handleInputDemo = (ev) => {
-    console.log("Estas escribiendo...", ev.target.value);
-    console.dir(ev.target);
-
     setDemo(ev.target.value);
   };
 
   const handleInputTech = (ev) => {
-    console.log("Estas escribiendo...", ev.target.value);
-    console.dir(ev.target);
-
     setTech(ev.target.value);
   };
 
   const handleInputDesc = (ev) => {
-    console.log("Estas escribiendo...", ev.target.value);
-    console.dir(ev.target);
-
     setDesc(ev.target.value);
   };
 
   const handleInputName = (ev) => {
-    console.log("Estas escribiendo...", ev.target.value);
-    console.dir(ev.target);
-
     setName(ev.target.value);
   };
 
   const handleInputJob = (ev) => {
-    console.log("Estas escribiendo...", ev.target.value);
-    console.dir(ev.target);
-
     setJob(ev.target.value);
   };
 
@@ -113,11 +89,11 @@ function App() {
             <div className="card__author">
               <div className="card__authorPhoto"></div>
               <p className="card__job">{job}</p>
-              <h3 className="card__name">{name}</h3>
+              <h3 className="card__name">{name === '' ? 'Emmelie Bjôrklund' : name}</h3>
             </div>
 
             <div className="card__project">
-              <h3 className="card__name">{proyect}</h3>
+              <h3 className="card__name">{proyect === '' ? 'Elegant Workspace' : proyect}</h3>
               <p className="card__slogan">{slogan}</p>
               <h3 className="card__descriptionTitle">Product description</h3>
               <p className="card__description">{desc}</p>
