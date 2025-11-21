@@ -9,8 +9,8 @@ function App() {
 
   const [proyect, setProyect] = useState('Elegant Workspace');
   const [slogan, setSlogan] = useState('Diseños Exclusivos');
-  // const [repo, setRepo] = useState('');  // ¿Esto sería un link en el icóno?
-  // const [demo, setDemo] = useState('');  // ¿Lo mismo en el icóno del globo?
+  const [repo, setRepo] = useState('');  // ¿Esto sería un link en el icóno?
+  const [demo, setDemo] = useState('');  // ¿Lo mismo en el icóno del globo?
   const [tech, setTech] = useState('React JS - HTML - CSS');
   const [desc, setDesc] = useState('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione');
   const [name, setName] = useState('Emmelie Bjôrklund');
@@ -33,11 +33,15 @@ function App() {
   const handleInputRepo = (ev) => {
     console.log("Estas escribiendo...", ev.target.value);
     console.dir(ev.target);
+
+    setRepo(ev.target.value);
   };
 
   const handleInputDemo = (ev) => {
     console.log("Estas escribiendo...", ev.target.value);
     console.dir(ev.target);
+
+    setDemo(ev.target.value);
   };
 
   const handleInputTech = (ev) => {
@@ -123,17 +127,17 @@ function App() {
 
                 <a
                   className="icon icon__www"
-                  href="#"
+                  href={demo}
                   title="Haz click para ver el proyecto online"
                 >
-                  Web link
+                  {demo}
                 </a>
                 <a
                   className="icon icon__github"
-                  href="#"
+                  href={repo}
                   title="Haz click para ver el código del proyecto"
                 >
-                  GitHub link
+                  {repo}
                 </a>
               </div>
             </div>
