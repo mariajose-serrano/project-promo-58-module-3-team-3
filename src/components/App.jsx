@@ -83,7 +83,7 @@ function App() {
               <h3 className="card__name">{name === '' ? 'Elegant Workspace' : name}</h3>
               <p className="card__slogan">{slogan === '' ? 'Diseños Exclusivos' : slogan}</p>
               <h3 className="card__descriptionTitle">Product description</h3>
-              <p className="card__description">{desc === '' ? 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione' : slogan}</p>
+              <p className="card__description">{desc === '' ? 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione' : desc}</p>
 
               <div className="card__technicalInfo">
                 <p className="card__technologies">{technologies === '' ? 'React JS - HTML - CSS' : technologies}</p>
