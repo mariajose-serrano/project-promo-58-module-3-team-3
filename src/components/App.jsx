@@ -11,17 +11,21 @@ import { useState } from "react";
 
 function App() {
 
-  const [proyect, setProyect] = useState('Elegant Workspace');
+  const [name, setName] = useState('Elegant Workspace');
   const [slogan, setSlogan] = useState('Diseños Exclusivos');
   const [repo, setRepo] = useState('');  // para estos hay que poner {repo}
   const [demo, setDemo] = useState('');  //  y {demo} tanto en el href como dentro del <a>
-  const [tech, setTech] = useState('React JS - HTML - CSS');
+  const [technologies, setTechnologies] = useState('React JS - HTML - CSS');
   const [desc, setDesc] = useState('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione');
-  const [name, setName] = useState('Emmelie Bjôrklund');
+  const [author, setAuthor] = useState('Emmelie Bjôrklund');
   const [job, setJob] = useState('Full stack Developer');
 
-  const handleInputProyect = (ev) => {
-    setProyect(ev.target.value);
+  //const [image, setImage] = useSet();
+  //const [image, steImage] = useSet();
+
+
+  const handleInputName = (ev) => {
+    setName(ev.target.value);
   };
 
   const handleInputSlogan = (ev) => {
@@ -37,15 +41,15 @@ function App() {
   };
 
   const handleInputTech = (ev) => {
-    setTech(ev.target.value);
+    setTechnologies(ev.target.value);
   };
 
   const handleInputDesc = (ev) => {
     setDesc(ev.target.value);
   };
 
-  const handleInputName = (ev) => {
-    setName(ev.target.value);
+  const handleInputAuthor = (ev) => {
+    setAuthor(ev.target.value);
   };
 
   const handleInputJob = (ev) => {
@@ -71,18 +75,18 @@ function App() {
 
             <div className="card__author">
               <div className="card__authorPhoto"></div>
-              <p className="card__job">{job}</p>
-              <h3 className="card__name">{name === '' ? 'Emmelie Bjôrklund' : name}</h3>
+              <p className="card__job">{job === '' ? 'Full stack Developer' : job}</p>
+              <h3 className="card__name">{author === '' ? 'Emmelie Bjôrklund' : author}</h3>
             </div>
 
             <div className="card__project">
-              <h3 className="card__name">{proyect === '' ? 'Elegant Workspace' : proyect}</h3>
-              <p className="card__slogan">{slogan}</p>
+              <h3 className="card__name">{name === '' ? 'Elegant Workspace' : name}</h3>
+              <p className="card__slogan">{slogan === '' ? 'Diseños Exclusivos' : slogan}</p>
               <h3 className="card__descriptionTitle">Product description</h3>
-              <p className="card__description">{desc}</p>
+              <p className="card__description">{desc === '' ? 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione' : slogan}</p>
 
               <div className="card__technicalInfo">
-                <p className="card__technologies">{tech}</p>
+                <p className="card__technologies">{technologies === '' ? 'React JS - HTML - CSS' : technologies}</p>
 
                 <a
                   className="icon icon__www"
@@ -114,7 +118,7 @@ function App() {
               name="name"
               id="name"
               placeholder="Nombre del proyecto"
-              onInput={handleInputProyect}
+              onInput={handleInputName}
             />
             <input
               className="addForm__input"
@@ -171,7 +175,7 @@ function App() {
               name="autor"
               id="autor"
               placeholder="Nombre"
-              onInput={handleInputName}
+              onInput={handleInputAuthor}
             />
             <input
               className="addForm__input"
