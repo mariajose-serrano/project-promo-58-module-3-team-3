@@ -1,8 +1,8 @@
 import Card from "./Card";
 
-function Preview ({name, job, author, slogan, desc, technologies, demo, repo}) {
+function Preview ({cardData}) {
 
-    const changeData = {name, job, author, slogan, desc, technologies, demo, repo};
+    const changeData = cardData;
 
     return (
         <section className="preview">

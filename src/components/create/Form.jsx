@@ -1,6 +1,6 @@
 
 
-function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputDemo, handleInputTech, handleInputDesc, handleInputAuthor, handleInputJob,}){
+function Form({handleInputCard, cardData}){
     return(
         <form className="addForm">
           <h2 className="title">Información</h2>
@@ -14,7 +14,8 @@ function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputD
               name="name"
               id="name"
               placeholder="Nombre del proyecto"
-              onInput={handleInputName}
+              value={cardData.name}
+              onInput={handleInputCard}
             />
             <input
               className="addForm__input"
@@ -22,7 +23,8 @@ function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputD
               name="slogan"
               id="slogan"
               placeholder="Slogan"
-              onInput={handleInputSlogan}
+              value={cardData.slogan}
+              onInput={handleInputCard}
             />
             <div className="addForm__2col">
               <input
@@ -31,7 +33,8 @@ function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputD
                 name="repo"
                 id="repo"
                 placeholder="Repositorio"
-                onInput={handleInputRepo}
+                value={cardData.repo}
+                onInput={handleInputCard}
               />
               <input
                 className="addForm__input"
@@ -39,7 +42,8 @@ function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputD
                 name="demo"
                 id="demo"
                 placeholder="Demo"
-                onInput={handleInputDemo}
+                value={cardData.demo}
+                onInput={handleInputCard}
               />
             </div>
             <input
@@ -48,7 +52,8 @@ function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputD
               name="technologies"
               id="technologies"
               placeholder="Tecnologías"
-              onInput={handleInputTech}
+              value={cardData.technologies}
+              onInput={handleInputCard}
             />
             <textarea
               className="addForm__input"
@@ -56,7 +61,8 @@ function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputD
               name="desc"
               id="desc"
               placeholder="Descripción"
-              onInput={handleInputDesc}
+              value={cardData.desc}
+              onInput={handleInputCard}
               rows="5"
             ></textarea>
           </fieldset>
@@ -68,10 +74,11 @@ function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputD
             <input
               className="addForm__input"
               type="text"
-              name="autor"
-              id="autor"
+              name="author"
+              id="author"
               placeholder="Nombre"
-              onInput={handleInputAuthor}
+              value={cardData.author}
+              onInput={handleInputCard}
             />
             <input
               className="addForm__input"
@@ -79,7 +86,8 @@ function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputD
               name="job"
               id="job"
               placeholder="Trabajo"
-              onInput={handleInputJob}
+              value={cardData.job}
+              onInput={handleInputCard}
             />
           </fieldset>
 
@@ -109,3 +117,5 @@ function Form({handleInputName, handleInputSlogan, handleInputRepo, handleInputD
 }
 
 export default Form
+
+/*handleInputName, handleInputSlogan, handleInputRepo, handleInputDemo, handleInputTech, handleInputDesc, handleInputAuthor, handleInputJob,*/

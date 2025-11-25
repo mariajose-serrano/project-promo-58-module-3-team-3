@@ -10,18 +10,18 @@ function Card ({changeData}){
 
             <div className="card__author">
               <div className="card__authorPhoto"></div>
-              <p className="card__job">{changeData.job === '' ? 'Full stack Developer' : changeData.job}</p>
-              <h3 className="card__name">{changeData.author === '' ? 'Emmelie Bjôrklund' : changeData.author}</h3>
+              <p className="card__job">{changeData.job || 'Full stack Developer'}</p>
+              <h3 className="card__name">{changeData.author || 'Emmelie Bjôrklund'}</h3>
             </div>
 
             <div className="card__project">
-              <h3 className="card__name">{changeData.name === '' ? 'Elegant Workspace' : changeData.name}</h3>
-              <p className="card__slogan">{changeData.slogan === '' ? 'Diseños Exclusivos' : changeData.slogan}</p>
+              <h3 className="card__name">{changeData.name || 'Elegant Workspace'}</h3>
+              <p className="card__slogan">{changeData.slogan || 'Diseños Exclusivos'}</p>
               <h3 className="card__descriptionTitle">Product description</h3>
-              <p className="card__description">{changeData.desc === '' ? 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione' : changeData.desc}</p>
+              <p className="card__description">{changeData.desc || 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione'}</p>
 
               <div className="card__technicalInfo">
-                <p className="card__technologies">{changeData.technologies === '' ? 'React JS - HTML - CSS' : changeData.technologies}</p>
+                <p className="card__technologies">{changeData.technologies || 'React JS - HTML - CSS'}</p>
 
                 <a
                   className="icon icon__www"
@@ -44,3 +44,6 @@ function Card ({changeData}){
 }
 
 export default Card
+
+
+
