@@ -15,7 +15,7 @@ function Form({handleInputCard, cardData}){
               id="name"
               placeholder="Nombre del proyecto"
               value={cardData.name}
-              onChange={handleInputCard}
+              onInput={handleInputCard}
             />
             <input
               className="addForm__input"
@@ -24,7 +24,7 @@ function Form({handleInputCard, cardData}){
               id="slogan"
               placeholder="Slogan"
               value={cardData.slogan}
-              onChange={handleInputCard}
+              onInput={handleInputCard}
             />
             <div className="addForm__2col">
               <input
@@ -34,7 +34,7 @@ function Form({handleInputCard, cardData}){
                 id="repo"
                 placeholder="Repositorio"
                 value={cardData.repo}
-                onChange={handleInputCard}
+                onInput={handleInputCard}
               />
               <input
                 className="addForm__input"
@@ -43,7 +43,7 @@ function Form({handleInputCard, cardData}){
                 id="demo"
                 placeholder="Demo"
                 value={cardData.demo}
-                onChange={handleInputCard}
+                onInput={handleInputCard}
               />
             </div>
             <input
@@ -53,7 +53,7 @@ function Form({handleInputCard, cardData}){
               id="technologies"
               placeholder="Tecnologías"
               value={cardData.technologies}
-              onChange={handleInputCard}
+              onInput={handleInputCard}
             />
             <textarea
               className="addForm__input"
@@ -62,7 +62,7 @@ function Form({handleInputCard, cardData}){
               id="desc"
               placeholder="Descripción"
               value={cardData.desc}
-              onChange={handleInputCard}
+              onInput={handleInputCard}
               rows="5"
             ></textarea>
           </fieldset>
@@ -78,7 +78,7 @@ function Form({handleInputCard, cardData}){
               id="author"
               placeholder="Nombre"
               value={cardData.author}
-              onChange={handleInputCard}
+              onInput={handleInputCard}
             />
             <input
               className="addForm__input"
@@ -87,7 +87,7 @@ function Form({handleInputCard, cardData}){
               id="job"
               placeholder="Trabajo"
               value={cardData.job}
-              onChange={handleInputCard}
+              onInput={handleInputCard}
             />
           </fieldset>
 
