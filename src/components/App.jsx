@@ -28,14 +28,14 @@ function App() {
   //const [image, steImage] = useSet();
 
   const [cardData, setCardData] = useState ({
-    name: 'Elegant Workspace',
-    slogan: 'Diseños Exclusivos',
+    name: '',
+    slogan: '',
     repo: '',
     demo: '',
-    technologies: 'React JS - HTML - CSS',
-    desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione',
-    author: 'Emmelie Bjôrklund',
-    job: 'Full stack Developer',
+    technologies: '',
+    desc: '',
+    author: '',
+    job: '',
   })
 
   const handleInputCard = (ev) => {

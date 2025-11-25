@@ -306,6 +306,12 @@ fieldset {
 
 .addForm .addForm__input::placeholder {
   color: var(--color-white-50);
+  opacity: 1;
+}
+
+.addForm .addForm__input:focus::placeholder {
+  color: var(--color-white-50);
+  opacity: 1;
 }
 
 .addForm .addForm__group--upload {
