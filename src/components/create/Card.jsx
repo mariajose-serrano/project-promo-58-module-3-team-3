@@ -1,4 +1,3 @@
-
 function Card ({changeData}){
     return(
         <article className="card">
@@ -9,7 +8,9 @@ function Card ({changeData}){
             </h2>
 
             <div className="card__author">
-              <div className="card__authorPhoto"></div>
+              <div className="card__authorPhoto" style={{
+          backgroundImage: changeData.image ? `url("${changeData.image}")`: null,
+        }}></div>
               <p className="card__job">{changeData.job || 'Full stack Developer'}</p>
               <h3 className="card__name">{changeData.author || 'Emmelie Bjôrklund'}</h3>
             </div>
