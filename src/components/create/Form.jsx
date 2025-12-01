@@ -1,7 +1,7 @@
 
 import GetAvatar from "./getAvatar";
 
-function Form({ handleInputCard, cardData, setCardData }) {
+function Form({ handleInputCard, cardData, setCardData, handleClick }) {
 
   const handleChangePhoto = (photoData) => {
       setCardData({
@@ -17,8 +17,12 @@ function Form({ handleInputCard, cardData, setCardData }) {
     });
   }
 
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
+
   return (
-    <form className="addForm">
+    <form className="addForm" onSubmit={handleSubmit}>
       <h2 className="title">Información</h2>
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
@@ -111,7 +115,7 @@ function Form({ handleInputCard, cardData, setCardData }) {
 
 <GetAvatar text="Subir foto de la autora" updateAvatar={handleChangeImage} />
 
-        <button className="button--large">Guardar proyecto</button>
+        <button className="button--large" onClick={handleClick}>Guardar proyecto</button>
       </fieldset>
     </form>
   );

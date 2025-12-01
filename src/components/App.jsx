@@ -6,8 +6,7 @@ import Footer from "./layout/Footer";
 import Hero from "./layout/Hero";
 import Preview from "./create/Preview";
 import Form from "./create/Form";
-import { useState, useEffect} from "react";
-
+import { useState, useEffect } from "react";
 
 function App() {
   const [cardData, setCardData] = useState({
@@ -23,10 +22,13 @@ function App() {
     image: "",
   });
 
- useEffect(() => {
-  // Este código se lanza cuando cambie cardData
-  localStorage.setItem('form-backup', JSON.stringify(cardData));
-}, [cardData]);
+  const [cardURL, setCardURL] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    // Este código se lanza cuando cambie cardData
+    localStorage.setItem("form-backup", JSON.stringify(cardData));
+  }, [cardData]);
 
   const handleInputCard = (ev) => {
     setCardData({
@@ -46,18 +48,18 @@ function App() {
       .then((res) => res.json())
       .then((responseData) => {
         if (responseData.success) {
-          // Hacemos algo para indicar la dirección del servidor, ole y ole
+          const cardURL = responseData.cardURL;
+          setCardURL(cardURL);
+          setErrorMsg("");
+          console.log(cardURL);
         } else {
-          // Hacemos algo para indicar que hay un error, fíjate tú
+          setErrorMsg(responseData.error);
+          setCardURL("");          
         }
       })
       .catch((error) => {
         console.error("Error en la petición:", error);
       });
-  };
-
-  const handleSubmit = (ev) => {
-    ev.preventDefault();
   };
 
   return (
@@ -70,6 +72,7 @@ function App() {
           handleInputCard={handleInputCard}
           cardData={cardData}
           setCardData={setCardData}
+          handleClick={handleClick}
         />
       </main>
       <Footer />
