@@ -62,6 +62,8 @@ function App() {
       });
   };
 
+
+
   return (
     <div className="container">
       <Header />
@@ -73,6 +75,8 @@ function App() {
           cardData={cardData}
           setCardData={setCardData}
           handleClick={handleClick}
+          cardURL={cardURL}
+          errorMsg={errorMsg}
         />
       </main>
       <Footer />
