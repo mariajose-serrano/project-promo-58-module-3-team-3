@@ -7,7 +7,7 @@ import Hero from "./layout/Hero";
 import Preview from "./create/Preview";
 import Form from "./create/Form";
 import { useState, useEffect } from "react";
-
+import { Routes, Route } from "react-router";
 function App() {
   const [cardData, setCardData] = useState({
     name: "",
