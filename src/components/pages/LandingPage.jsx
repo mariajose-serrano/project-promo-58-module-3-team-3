@@ -3,7 +3,7 @@ import { Link } from "react-router";
 function LandingPage() {
     return(
         <>
-        <h1>...Landing en construcción...</h1>
+        <h1>Landing</h1>
 
         <Link to="/create" className="start_button">
             Crear mi tarjeta
