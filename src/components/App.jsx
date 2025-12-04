@@ -1,13 +1,21 @@
 import "../styles/App.scss";
+
 import LogoBrand from "../images/laptop-code-solid.svg";
 import LogoAdalab from "../images/adalab.png";
+
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Hero from "./layout/Hero";
 import Preview from "./create/Preview";
 import Form from "./create/Form";
+
+import LandingPage from "./pages/LandingPage";
+
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router";
+
+
+
 function App() {
   const [cardData, setCardData] = useState({
     name: "",
@@ -24,6 +32,15 @@ function App() {
 
   const [cardURL, setCardURL] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+
+    //evita que desaparezca lo escrito al recargar la página
+  useEffect(() => {
+    const savedData = localStorage.getItem("form-backup");
+
+    if(savedData) {
+      setCardData(JSON.parse(savedData));
+    }
+  }, []);
 
   useEffect(() => {
     // Este código se lanza cuando cambie cardData
@@ -54,7 +71,7 @@ function App() {
           console.log(cardURL);
         } else {
           setErrorMsg(responseData.error);
-          setCardURL("");          
+          setCardURL("");
         }
       })
       .catch((error) => {
@@ -62,22 +79,33 @@ function App() {
       });
   };
 
-
-
   return (
     <div className="container">
       <Header />
       <main className="main">
-        <Hero />
-        <Preview cardData={cardData} />
-        <Form
-          handleInputCard={handleInputCard}
-          cardData={cardData}
-          setCardData={setCardData}
-          handleClick={handleClick}
-          cardURL={cardURL}
-          errorMsg={errorMsg}
-        />
+        <Routes>
+          {/*ruta para la landing*/}
+          <Route path="/" element={<LandingPage />} />
+
+          {/*ruta para crear la tarjeta*/}
+          <Route
+            path="/create"
+            element={
+              <>
+                <Hero />
+                <Preview cardData={cardData} />
+                <Form
+                  handleInputCard={handleInputCard}
+                  cardData={cardData}
+                  setCardData={setCardData}
+                  handleClick={handleClick}
+                  cardURL={cardURL}
+                  errorMsg={errorMsg}
+                />
+              </>
+            }
+          />
+        </Routes>
       </main>
       <Footer />
     </div>
@@ -86,4 +114,3 @@ function App() {
 
 export default App;
 
-/*handleInputName={handleInputName} handleInputSlogan={handleInputSlogan} handleInputRepo={handleInputRepo} handleInputDemo={handleInputDemo} handleInputTech={handleInputTech} handleInputDesc={handleInputDesc} handleInputAuthor={handleInputAuthor} handleInputJob={handleInputJob}*/
