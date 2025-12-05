@@ -5,7 +5,7 @@ function LandingPage() {
         <>
         <h1>Landing</h1>
 
-        <Link to="/create" className="start_button">
+        <Link  to="/create" className="start_button">
             Crear mi tarjeta
         </Link>
         </>
